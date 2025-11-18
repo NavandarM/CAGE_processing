@@ -1,11 +1,12 @@
 # Snakemake pipeline for Bowtie alignment, sorting, and indexing: CAGE data
 
 # Config
-BOWTIE_INDEX = "/data/manke/processing1/navandar/Cisse/bowtieIndex_mm10/mm10_index"
+BOWTIE_INDEX = "PathToBowtieIndex"
 n_threads = 20
-SAMPLES = ["SRR9201831", "SRR9201832", "SRR9201833"]
+SAMPLES = ["SRR9201", "SRR9202", "SRR920"]
 alignment_env = 'env.yaml'
 
+##Wf
 rule all:
     input:
         expand("{sample}.sort.bam.bai", sample=SAMPLES)
